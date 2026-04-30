@@ -10,7 +10,7 @@ import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import { fetchCollege, type College, formatFees, formatPackage } from '../../../lib/api';
 import { showToast } from '../../../components/Toast';
-import toast from 'react-hot-toast';
+
 
 const REVIEWS = [
   { name: 'Rahul Sharma', year: '2023', rating: 5, text: 'Exceptional faculty and world-class campus. The placement cell is incredibly proactive and helped me land at Google.' },
@@ -34,7 +34,7 @@ export default function CollegeDetailPage() {
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
-    showToast.copied();
+    console.log('Link copied!');
   };
 
   if (loading) return (
