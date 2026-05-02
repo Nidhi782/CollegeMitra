@@ -9,6 +9,7 @@
 ## 📸 Preview
 
 ![CollegeMitra Homepage](Screenshots/Dashboard.png)
+![CollegeMitra Homepage](Screenshots/Dashboard_detail.png)
 
 > Search 20+ top Indian colleges, filter by state, type, course & fees, and compare them side by side.
 
