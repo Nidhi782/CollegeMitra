@@ -8,7 +8,7 @@
 
 ## 📸 Preview
 
-![CollegeMitra Homepage](https://collegemitra-gray.vercel.app/og-image.png)
+![CollegeMitra Homepage](Screenshots/Dashboard.png)
 
 > Search 20+ top Indian colleges, filter by state, type, course & fees, and compare them side by side.
 
