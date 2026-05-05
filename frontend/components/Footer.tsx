@@ -87,10 +87,9 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-5 text-xs text-slate-600">
-          <span>© {year} CollegeMitra · Built with ❤️ for Indian students</span>
+        
           <div className="flex items-center gap-1 text-emerald-500 font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Data verified as of May {year}
+            
           </div>
         </div>
       </div>
