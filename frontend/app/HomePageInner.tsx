@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import CollegeCard from '../components/CollegeCard';
 import CompareBar from '../components/CompareBar';
 import MitraAI from '../components/MitraAI';
+import { showToast } from '@/components/Toast';
+
 import {
   fetchColleges, fetchStates, type College, type CollegeFilters,
   EXAMS,
@@ -102,13 +104,14 @@ export default function HomePageInner() {
       .finally(() => setLoading(false));
   }, [filters]);
 
-  const handleToggleCompare = (id: number) => {
-    setCompareList(prev => {
-      if (prev.includes(id)) return prev.filter(i => i !== id);
-      if (prev.length >= 3) return prev;
-      return [...prev, id];
-    });
-  };
+  const handleToggleCompare = (id: number, name: string) => {
+  setCompareList((prev) => {
+    if (prev.includes(id)) { showToast.compareRemoved(name); return prev.filter((i) => i !== id); }
+    if (prev.length >= 3)  { showToast.compareMax(); return prev; }
+    showToast.compareAdded(name);
+    return [...prev, id];
+  });
+};
 
   const clearFilters = () => setFilters({ search:'', state:'', type:'', stream:'', sort:'rating', page:1, limit:'12' });
   const activeCount  = [filters.state, filters.type, filters.stream, filters.maxFees].filter(Boolean).length;
@@ -348,7 +351,7 @@ export default function HomePageInner() {
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger animate-fade-in">
                   {colleges.map(c => (
-                    <CollegeCard key={c.id} college={c} compareList={compareList} onToggleCompare={handleToggleCompare} />
+                    <CollegeCard key={c.id} college={c} compareList={compareList} onToggleCompare={(id) => handleToggleCompare(id, c.name)} />
                   ))}
                 </div>
                 {totalPages > 1 && (
