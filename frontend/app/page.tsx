@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import HomePageInner from './HomePageInner';
 import Navbar from '../components/Navbar';
 
+// v2 - refactored to HomePageInner
 export default function Page() {
   return (
     <Suspense fallback={
