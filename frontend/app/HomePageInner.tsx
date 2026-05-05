@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import CollegeCard from '../components/CollegeCard';
 import CompareBar from '../components/CompareBar';
 import MitraAI from '../components/MitraAI';
-import { showToast } from '@/components/Toast';
+import { showToast } from '../components/Toast';
 
 import {
   fetchColleges, fetchStates, type College, type CollegeFilters,
